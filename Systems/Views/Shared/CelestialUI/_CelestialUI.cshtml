@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>CelestialUI Admin</title>
+    <!-- base:css -->
+    <link href="~/Vendors/CelestialUI/typicons.font/font/typicons.css" rel="stylesheet" />
+    <link href="~/Vendors/CelestialUI/css/vendor.bundle.base.css" rel="stylesheet" />
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <link href="~/Vendors/CelestialUI/select2/select2.min.css" rel="stylesheet" />
+    <link href="~/Vendors/CelestialUI/select2-bootstrap-theme/select2-bootstrap.min.css" rel="stylesheet" />
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link href="~/Content/CelestialUI/css/vertical-layout-light/style.css" rel="stylesheet" />
+    <!-- endinject -->
+    <link rel="shortcut icon" href="~/Images/favicon.png" />
+</head>
+<body>
+    <div style="display: none; position: absolute; top: 0px; left: 0px; width: 100%;
+      height: 100%; background-image: url('../../Images/Progress.gif'); background-repeat:no-repeat;
+      background-position:center; z-index:100000" id="cargando">
+    </div>
+
+    <!--container-scroller-->
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        @{
+            Html.RenderPartial("~/Views/Shared/CelestialUI/_navbar.cshtml");
+        }
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_settings-panel.html -->
+            @{
+                Html.RenderPartial("~/Views/Shared/CelestialUI/_settings_panel.cshtml");
+            }
+            <!-- partial:partials/_sidebar.html -->
+            <!--Html.RenderPartial("~/Views/Shared/CelestialUI/_sidebar.cshtml");-->
+            @{ Html.RenderAction("ListarMenuEF", "Pagina"); }
+
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <!--Render-->
+                    @RenderBody()
+                    <input type="hidden" id="hdfOculto" value="@Url.Content("~")">
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                @{
+                    Html.RenderPartial("~/Views/Shared/CelestialUI/_footer.cshtml");
+                }
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!--/container-scroller-->
+    <!-- base:js -->
+    <script src="~/Vendors/CelestialUI/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="~/Content/CelestialUI/js/off-canvas.js"></script>
+    <script src="~/Content/CelestialUI/js/hoverable-collapse.js"></script>
+    <script src="~/Content/CelestialUI/js/template.js"></script>
+    <script src="~/Content/CelestialUI/js/settings.js"></script>
+    <script src="~/Content/CelestialUI/js/todolist.js"></script>
+    <!-- endinject -->
+    <!-- plugin js for this page -->
+    <script src="~/Vendors/CelestialUI/typeahead.js/typeahead.bundle.min.js"></script>
+    <script src="~/Vendors/CelestialUI/select2/select2.min.js"></script>
+    <script src="~/Vendors/CelestialUI/progressbar.js/progressbar.min.js"></script>
+    <script src="~/Vendors/CelestialUI/chart.js/Chart.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- Custom js for this page-->
+    <script src="~/Content/CelestialUI/js/file-upload.js"></script>
+    <script src="~/Content/CelestialUI/js/typeahead.js"></script>
+    <script src="~/Content/CelestialUI/js/select2.js"></script>
+    <script src="~/Content/CelestialUI/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+    @*<script>
+
+        function activeof() {
+            document.getElementById("of").classList.remove("active");
+        }
+
+
+        function activeoyf() {
+            alert('hola mundo');
+        }
+
+
+        window.onload = function () {
+            activeof();
+
+        }
+    </script>*@
+</body>
+</html>
+
+
